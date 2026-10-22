@@ -1,0 +1,20 @@
+{
+  "name": "@ois/server",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler dev --port 8787",
+    "deploy": "node ../../scripts/guard.mjs && wrangler deploy",
+    "typecheck": "tsc --noEmit",
+    "test:integration": "vitest run --config vitest.integration.config.ts"
+  },
+  "dependencies": {
+    "@ois/shared": "*"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4",
+    "typescript": "~5.9",
+    "wrangler": "^4.151.3"
+  }
+}

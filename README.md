@@ -19,16 +19,21 @@ and genuine online multiplayer through private room codes.
 ```bash
 cd ois-education     # this folder
 npm install
-npm run dev          # http://localhost:3000
+npm run dev          # website: http://localhost:3000
+npm run dev -w @ois/server   # in a second terminal: room server on http://localhost:8787
 ```
+
+Multiplayer prototype (developer page): http://localhost:3000/dev/multiplayer. Open it in two windows.
 
 ## Tests
 
 ```bash
-npm test                  # unit tests (game rules, catalog)
+npm test                  # unit tests (game rules, catalog, room logic)
+npm run test:integration -w @ois/server  # room server in Cloudflare's local runtime, players as separate processes
 npm run build             # production build of the website
 npx playwright install chromium webkit   # once, on your Mac
-npm run test:e2e          # browser tests at MacBook Air size (Chromium)
+npm run test:e2e          # browser tests at MacBook Air size (Chromium); starts the site and the room server
+BASE_URL=https://<your-site>.vercel.app npx playwright test tests/e2e/multiplayer.spec.ts   # against the deployment
 WITH_WEBKIT=1 npm run test:e2e           # also run them in WebKit (Safari's engine)
 ```
 
@@ -36,7 +41,7 @@ WITH_WEBKIT=1 npm run test:e2e           # also run them in WebKit (Safari's eng
 
 - [x] Stage 0: project skeleton, safety guard, game catalog
 - [x] Stage 1: website shell: library, game pages, shared game shell (pause/restart/fullscreen/results)
-- [ ] Stage 2: multiplayer prototype on Cloudflare Durable Objects (deployed and tested)
+- [ ] Stage 2: multiplayer prototype on Cloudflare Durable Objects. Built and tested locally; deployment and the deployed test still pending (see `docs/DEPLOY.md`)
 - [ ] Stage 3: the six games, one at a time
 - [ ] Stage 4–6: integration, public deployment, final QA
 

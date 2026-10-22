@@ -1,0 +1,12 @@
+{
+  // OIS Education multiplayer rooms. Free-plan compatible: SQLite-backed Durable Objects.
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "ois-education-rooms",
+  "main": "src/index.ts",
+  "compatibility_date": "2026-10-01",
+  "durable_objects": { "bindings": [{ "name": "ROOMS", "class_name": "Room" }] },
+  "migrations": [{ "tag": "v1", "new_sqlite_classes": ["Room"] }],
+  // Public (not secret): websites allowed to connect. Add the Vercel URL here after the site is deployed.
+  "vars": { "ALLOWED_ORIGINS": "http://localhost:3000,http://localhost:3200" },
+  "observability": { "enabled": true }
+}
