@@ -25,8 +25,7 @@ export type GameInfo = {
   status: BuildStatus;
 };
 
-const WASD = ["W", "A", "S", "D"];
-const ARROWS = ["↑", "←", "↓", "→"];
+const MOVE = ["WASD", "Arrows"];
 
 export const GAMES: GameInfo[] = [
   {
@@ -64,7 +63,7 @@ export const GAMES: GameInfo[] = [
     solo: { kind: "ai", difficulties: ["Easy", "Medium", "Hard", "Expert"] },
     online: { minPlayers: 2, maxPlayers: 2 },
     controls: [
-      { keys: [...WASD, ...ARROWS], action: "Move" }, { keys: ["J"], action: "Pass" },
+      { keys: MOVE, action: "Move" }, { keys: ["J"], action: "Pass" },
       { keys: ["K"], action: "Shoot (hold for power)" }, { keys: ["Shift"], action: "Sprint" },
       { keys: ["L"], action: "Switch player" }, { keys: ["Esc"], action: "Pause" },
     ],
@@ -78,7 +77,7 @@ export const GAMES: GameInfo[] = [
     solo: { kind: "ai", difficulties: ["Easy", "Medium", "Hard", "Expert"] },
     online: { minPlayers: 2, maxPlayers: 2 },
     controls: [
-      { keys: [...WASD, ...ARROWS], action: "Move" }, { keys: ["J"], action: "Shoot (release at the top)" },
+      { keys: MOVE, action: "Move" }, { keys: ["J"], action: "Shoot (release at the top)" },
       { keys: ["K"], action: "Steal" }, { keys: ["L"], action: "Block / contest" },
       { keys: ["Shift"], action: "Sprint" }, { keys: ["Esc"], action: "Pause" },
     ],
@@ -92,7 +91,7 @@ export const GAMES: GameInfo[] = [
     solo: { kind: "practice", note: "Solo practice: explore the map and try every task. The full game needs real players online." },
     online: { minPlayers: 4, maxPlayers: 10 },
     controls: [
-      { keys: [...WASD, ...ARROWS], action: "Move" }, { keys: ["E"], action: "Use / do task" },
+      { keys: MOVE, action: "Move" }, { keys: ["E"], action: "Use / do task" },
       { keys: ["R"], action: "Report" }, { keys: ["Q"], action: "Eliminate (impostor)" },
       { keys: ["Trackpad"], action: "Tasks and voting" }, { keys: ["Esc"], action: "Menu" },
     ],
@@ -106,7 +105,7 @@ export const GAMES: GameInfo[] = [
     solo: { kind: "ai", difficulties: ["Easy", "Medium", "Hard", "Expert"] },
     online: { minPlayers: 2, maxPlayers: 8 },
     controls: [
-      { keys: [...WASD, ...ARROWS], action: "Change direction (no instant U-turns)" },
+      { keys: MOVE, action: "Change direction (no instant U-turns)" },
       { keys: ["Esc"], action: "Pause" },
     ],
     status: "planned",

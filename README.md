@@ -22,6 +22,24 @@ npm install
 npm run dev          # http://localhost:3000
 ```
 
+## Tests
+
+```bash
+npm test                  # unit tests (game rules, catalog)
+npm run build             # production build of the website
+npx playwright install chromium webkit   # once, on your Mac
+npm run test:e2e          # browser tests at MacBook Air size (Chromium)
+WITH_WEBKIT=1 npm run test:e2e           # also run them in WebKit (Safari's engine)
+```
+
+## Build progress
+
+- [x] Stage 0: project skeleton, safety guard, game catalog
+- [x] Stage 1: website shell: library, game pages, shared game shell (pause/restart/fullscreen/results)
+- [ ] Stage 2: multiplayer prototype on Cloudflare Durable Objects (deployed and tested)
+- [ ] Stage 3: the six games, one at a time
+- [ ] Stage 4–6: integration, public deployment, final QA
+
 ## Project layout
 
 ```

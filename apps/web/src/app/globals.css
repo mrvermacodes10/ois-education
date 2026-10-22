@@ -1,0 +1,30 @@
+@import "tailwindcss";
+
+@theme {
+  --color-paper: #f2f1e8;
+  --color-card: #fbfaf5;
+  --color-forest: #1e3b2f;
+  --color-forest-deep: #142a21;
+  --color-moss: #5c6b60;
+  --color-sage: #b9c9ae;
+  --color-sage-soft: #e1e7d8;
+  --color-line: #dad8cb;
+  --color-alert: #9b3b2e;
+  --font-sans: "Schibsted Grotesk Variable", ui-sans-serif, system-ui, -apple-system, sans-serif;
+}
+
+html { background: var(--color-paper); color: var(--color-forest); }
+body { font-family: var(--font-sans); -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
+::selection { background: var(--color-sage); color: var(--color-forest-deep); }
+:focus-visible { outline: 2px solid var(--color-forest); outline-offset: 3px; border-radius: 6px; }
+
+/* Keycap used in control guides */
+.keycap {
+  display: inline-flex; align-items: center; justify-content: center; min-width: 1.75rem; height: 1.75rem;
+  padding: 0 0.45rem; border: 1px solid var(--color-line); border-bottom-width: 2px; border-radius: 6px;
+  background: var(--color-card); font-size: 0.8rem; font-weight: 600; color: var(--color-forest); font-family: inherit;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; }
+}
