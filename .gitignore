@@ -1,0 +1,17 @@
+node_modules/
+.next/
+out/
+dist/
+.wrangler/
+.vercel/
+coverage/
+test-results/
+playwright-report/
+*.tsbuildinfo
+next-env.d.ts
+.DS_Store
+# Secrets and local settings never go to GitHub
+.env
+.env.*
+!.env.example
+.dev.vars

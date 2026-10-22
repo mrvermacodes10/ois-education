@@ -1,0 +1,24 @@
+{
+  "name": "ois-education",
+  "private": true,
+  "description": "OIS Education: a small library of original browser games with singleplayer AI and online multiplayer.",
+  "workspaces": [
+    "apps/*",
+    "packages/*",
+    "packages/games/*"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "guard": "node scripts/guard.mjs",
+    "dev": "npm run guard && npm run dev -w @ois/web",
+    "build": "npm run build -w @ois/web",
+    "typecheck": "npm run typecheck --workspaces --if-present",
+    "test": "vitest run"
+  },
+  "devDependencies": {
+    "typescript": "~5.9",
+    "vitest": "^5.0.5"
+  }
+}
